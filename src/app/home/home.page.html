@@ -1,48 +1,63 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card">
-    <img src="/assets/shapes.svg" alt=""/>
-    <ion-card-header>
-      <ion-card-subtitle>Get Started</ion-card-subtitle>
-      <ion-card-title>Welcome to Ionic</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p>
-        Now that your app has been created, you'll want to start building out features
-        and components. Check out some of the resources below for next steps.
-      </p>
-    </ion-card-content>
-  </ion-card>
+  <p class="total">{{Total | currency:'USD' }}</p>
+<mat-grid-list cols="10" style="margin-bottom: 15%;">
+  <mat-grid-tile colspan="2">
+    <label #cantidadInput class="visor cantidad {{claseCantidad}}">{{ Cantidad | number:'1.0'}}</label>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <label>x</label>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="7">
+    <label #precioInput class="visor precio {{clasePrecio}}">{{ PrecioUnitario | number:'1.2'}}</label>
+  </mat-grid-tile>
+</mat-grid-list>
 
-  <ion-list lines="none">
-    <ion-list-header>
-      <ion-label>Resources</ion-label>
-    </ion-list-header>
-    <ion-item href="https://ionicframework.com/docs/">
-      <ion-icon slot="start" color="medium" name="book"></ion-icon>
-      <ion-label>Ionic Documentation</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-      <ion-icon slot="start" color="medium" name="build"></ion-icon>
-      <ion-label>Scaffold Out Your App</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/layout/structure">
-      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-      <ion-label>Change Your App Layout</ion-label>
-    </ion-item>
-    <ion-item href="https://ionicframework.com/docs/theming/basics">
-      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-      <ion-label>Theme Your App</ion-label>
-    </ion-item>
-  </ion-list>
+<mat-grid-list cols="2">
+  <mat-grid-list cols="5">
+    <mat-grid-tile><button mat-raised-button width="100%" height="100%" flex=100 (click)="addToValue(7)">7</button>
+    </mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(8)">8</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(9)">9</button></mat-grid-tile>
+    <mat-grid-tile colspan="2"><button mat-raised-button (click)="limpiarValor()">C</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(4)">4</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(5)">5</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(6)">6</button></mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <button mat-raised-button (click)="cambiarFocus()">
+        <->
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(1)">1</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(2)">2</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(3)">3</button></mat-grid-tile>
+    <mat-grid-tile colspan="2"><button mat-raised-button (click)="sumar()">
+        Sumar
+      </button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue(0)">0</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue('00')">00</button></mat-grid-tile>
+    <mat-grid-tile><button mat-raised-button (click)="addToValue('000')">000</button></mat-grid-tile>
+    <mat-grid-tile colspan="2"><button mat-raised-button (click)="restar()">
+        Restar
+      </button></mat-grid-tile>
+  </mat-grid-list>
+</mat-grid-list>
+<mat-grid-list cols="2" rowHeight="3:1">
+  <mat-grid-tile>
+    <button mat-raised-button (click)="pago('Efectivo')">Efectivo</button>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-raised-button (click)="pago('Tarjeta')">Tarjeta</button>
+  </mat-grid-tile>
+</mat-grid-list>
 </ion-content>

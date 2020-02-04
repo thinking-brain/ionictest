@@ -2,3 +2,47 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+#visor {
+  border: 3px;
+  border-color: black;
+  background-color: darkgray;
+  width: inherit;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  margin: 5%;
+  padding: 5%;
+}
+
+.total {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  padding-right: 5%;
+}
+
+.visor {
+  width: 100%;
+  margin: 5%;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-color: gray;
+  border-style: solid;
+  font-size: 18px;
+}
+
+.visor-selected {
+  border-color: #3f51b5;
+}
+
+.cantidad {
+  text-align: center;
+}
+
+.precio {
+  text-align: right;
+}
